@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="com.sabir.training.extensionpoint.sayHello" name="com.sabir.training.extensionpoint.sayHello" schema="schema/com.sabir.training.extensionpoint.sayHello.exsd"/>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="com.sabir.training.rcp.extension.provider.EvaluateContribHandler"
+            id="com.sabir.training.rcp.extension.provider.sayHelloCommand"
+            name="say Hello">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               label="Say Hello Extension">
+            <command
+                  commandId="com.sabir.training.rcp.extension.provider.sayHelloCommand"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+
+</plugin>
